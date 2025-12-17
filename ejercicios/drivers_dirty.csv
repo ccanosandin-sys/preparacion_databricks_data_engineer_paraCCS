@@ -1,0 +1,201 @@
+driver_id,raw_name,license_ref,hourly_wage_text,certifications_list,hired_date,email
+D-101,Miguel Moreno,LIC-816063,22.12 EUR,ElectricVehicle-Hazmat-HeavyLoad,2023-11-25,miguel.moreno@ecomotive.com
+D-102,CARMEN DIAZ,LIC-697157,37.78,NightShift-ElectricVehicle,2023-06-15,carmen.diaz@ecomotive.com
+D-103,Elena Navarro,,23.3,Hazmat-International,2023-11-17,elena.navarro@ecomotive.com
+D-104,Jorge Alvarez,LIC-273587,34.72 EUR,ElectricVehicle,2023-09-20,jorge.alvarez@ecomotive.com
+D-105,Elena Romero,LIC-319656,22.0 EUR,International-HeavyLoad-NightShift,2023-09-24,elena.romero@ecomotive.com
+D-106,Laura Lopez,LIC-768741,47.51,HeavyLoad-Hazmat-NightShift,2023-06-21,laura.lopez@ecomotive.com
+D-107,isabel ruiz,LIC-335945,30.62,International-Hazmat-HeavyLoad,2023-09-04,isabel.ruiz@ecomotive.com
+D-108,  David Alvarez  ,LIC-140454,31.12,International-HeavyLoad-ElectricVehicle,2023-04-17,david.alvarez@ecomotive.com
+D-109,  CARLOS HERNANDEZ  ,LIC-850449,28.91,HeavyLoad,2023-07-26,carlos.hernandez@ecomotive.com
+D-110,ana diaz,LIC-468978,32.16 EUR,ElectricVehicle,2023-01-15,ana.diaz@ecomotive.com
+D-111,Maria Moreno,LIC-813280,20.19,ElectricVehicle,2023-08-05,maria.moreno@ecomotive.com
+D-112,  Lucia Smith  ,,25.63 EUR,NightShift-International-ElectricVehicle,2023-06-27,lucia.smith@ecomotive.com
+D-113,Juan Perez,LIC-997764,39.83,International-ElectricVehicle,2023-12-22,juan.perez@ecomotive.com
+D-114,  Sofia Diaz  ,LIC-306823,35.95 EUR,Hazmat,2023-12-04,sofia.diaz@ecomotive.com
+D-115,ana martin,LIC-826887,33.79 EUR,Hazmat-HeavyLoad-NightShift,2023-12-27,ana.martin@ecomotive.com
+D-116,ana perez,LIC-453615,40.41 EUR,International-HeavyLoad,2023-10-09,ana.perez@ecomotive.com
+D-117,Luis Romero,LIC-736881,35.71,Hazmat-NightShift-HeavyLoad,2023-01-20,luis.romero@ecomotive.com
+D-118,CARMEN MORENO,LIC-484232,44.8,ElectricVehicle-NightShift,2023-10-24,carmen.moreno@ecomotive.com
+D-119,  Laura Sanchez  ,LIC-733338,36.98,Hazmat-HeavyLoad,2023-11-14,laura.sanchez@ecomotive.com
+D-120,David Gomez,LIC-484389,45.24,NightShift-HeavyLoad-ElectricVehicle,2023-02-26,david.gomez@ecomotive.com
+D-121,pedro martin,LIC-429680,35.52 EUR,International-HeavyLoad-Hazmat,2023-06-07,pedro.martin@ecomotive.com
+D-122,sofia sanchez,,35.54,Hazmat,2023-10-19,sofia.sanchez@ecomotive.com
+D-123,  LAURA SANCHEZ  ,LIC-279988,47.44 EUR,International-Hazmat-HeavyLoad,2023-02-12,laura.sanchez@ecomotive.com
+D-124,  Pedro Navarro  ,LIC-593330,41.22 EUR,International-ElectricVehicle-Hazmat,2023-05-16,pedro.navarro@ecomotive.com
+D-125,Carlos Smith,LIC-497043,25.18,HeavyLoad-ElectricVehicle,2023-03-02,carlos.smith@ecomotive.com
+D-126,miguel garcia,LIC-446419,38.86 EUR,Hazmat,2023-03-24,miguel.garcia@ecomotive.com
+D-127,CARLOS ALVAREZ,LIC-515895,33.45,ElectricVehicle-HeavyLoad,2023-08-19,carlos.alvarez@ecomotive.com
+D-128,Laura Hernandez,LIC-186085,29.41,Hazmat-International-ElectricVehicle,2023-03-27,laura.hernandez@ecomotive.com
+D-129,  Pedro Alvarez  ,LIC-290549,20.9,ElectricVehicle,2023-03-28,pedro.alvarez@ecomotive.com
+D-130,Pedro Perez,LIC-107845,21.71 EUR,NightShift,2023-02-14,pedro.perez@ecomotive.com
+D-131,Luis Diaz,LIC-904416,27.69 EUR,ElectricVehicle,2023-04-01,luis.diaz@ecomotive.com
+D-132,Juan Sanchez,LIC-657134,24.94,HeavyLoad,2023-07-19,juan.sanchez@ecomotive.com
+D-133,  Roberto Moreno  ,LIC-332840,49.87 EUR,HeavyLoad,2023-08-01,roberto.moreno@ecomotive.com
+D-134,Isabel Gomez,LIC-663193,26.03,International-Hazmat-NightShift,2023-12-01,isabel.gomez@ecomotive.com
+D-135,  Luis Diaz  ,LIC-145305,42.57,International-NightShift,2023-06-20,luis.diaz@ecomotive.com
+D-136,  DAVID ROMERO  ,LIC-175847,44.61,HeavyLoad-International,2023-01-01,david.romero@ecomotive.com
+D-137,  pedro smith  ,LIC-753578,45.94,Hazmat-NightShift-HeavyLoad,2023-03-15,pedro.smith@ecomotive.com
+D-138,Juan Smith,,43.83 EUR,NightShift-HeavyLoad,2023-12-25,juan.smith@ecomotive.com
+D-139,pedro romero,LIC-337883,21.38,HeavyLoad,2023-11-09,pedro.romero@ecomotive.com
+D-140,laura gomez,LIC-426635,31.2,Hazmat-NightShift,2023-10-20,laura.gomez@ecomotive.com
+D-141,Maria Ruiz,LIC-855757,49.37 EUR,ElectricVehicle,2023-11-19,maria.ruiz@ecomotive.com
+D-142,Roberto Gomez,LIC-426366,46.08 EUR,ElectricVehicle-Hazmat,2023-05-02,roberto.gomez@ecomotive.com
+D-143,isabel moreno,LIC-815901,37.08 EUR,HeavyLoad,2023-09-20,isabel.moreno@ecomotive.com
+D-144,  Lucia Moreno  ,LIC-171112,20.97 EUR,HeavyLoad,2023-03-21,lucia.moreno@ecomotive.com
+D-145,Lucia Gomez,LIC-449438,27.41 EUR,International-ElectricVehicle-NightShift,2023-12-18,lucia.gomez@ecomotive.com
+D-146,LAURA ROMERO,LIC-908983,43.9 EUR,NightShift,2023-09-13,laura.romero@ecomotive.com
+D-147,JORGE GARCIA,LIC-673955,35.11 EUR,HeavyLoad-ElectricVehicle,2023-06-11,jorge.garcia@ecomotive.com
+D-148,  pedro perez  ,LIC-960864,46.64 EUR,NightShift,2023-04-07,pedro.perez@ecomotive.com
+D-149,  Sofia Navarro  ,LIC-562928,38.04 EUR,International-NightShift-HeavyLoad,2023-03-28,sofia.navarro@ecomotive.com
+D-150,  Isabel Sanchez  ,LIC-878765,23.1 EUR,Hazmat-ElectricVehicle,2023-05-25,isabel.sanchez@ecomotive.com
+D-151,Luis Lopez,LIC-137424,45.85 EUR,HeavyLoad-NightShift,2023-12-16,luis.lopez@ecomotive.com
+D-152,Miguel Diaz,LIC-532784,43.93 EUR,ElectricVehicle-NightShift-International,2023-08-07,miguel.diaz@ecomotive.com
+D-153,  Lucia Alvarez  ,LIC-242631,26.27 EUR,NightShift-HeavyLoad,2023-07-14,lucia.alvarez@ecomotive.com
+D-154,  Isabel Romero  ,LIC-243452,27.68 EUR,Hazmat-HeavyLoad-ElectricVehicle,2023-05-14,isabel.romero@ecomotive.com
+D-155,Sofia Gomez,LIC-399200,47.85 EUR,International-HeavyLoad,2023-01-11,sofia.gomez@ecomotive.com
+D-156,  ROBERTO SMITH  ,LIC-744562,27.85,Hazmat-NightShift,2023-02-18,roberto.smith@ecomotive.com
+D-157,LAURA MARTIN,LIC-456501,26.75 EUR,NightShift-International-ElectricVehicle,2023-05-07,laura.martin@ecomotive.com
+D-158,ISABEL RUIZ,LIC-616681,45.25,HeavyLoad-NightShift,2023-12-08,isabel.ruiz@ecomotive.com
+D-159,Elena Moreno,LIC-391916,47.25 EUR,ElectricVehicle-Hazmat,2023-12-20,elena.moreno@ecomotive.com
+D-160,Ana Lopez,LIC-525422,30.2,HeavyLoad-ElectricVehicle-Hazmat,2023-06-21,ana.lopez@ecomotive.com
+D-161,LUCIA SMITH,LIC-522276,36.7,HeavyLoad,2023-10-22,lucia.smith@ecomotive.com
+D-162,Laura Ruiz,LIC-867653,40.58 EUR,Hazmat,2023-12-16,laura.ruiz@ecomotive.com
+D-163,  ELENA SANCHEZ  ,LIC-917052,24.34,International-NightShift,2023-03-24,elena.sanchez@ecomotive.com
+D-164,pedro navarro,LIC-859738,48.74,Hazmat-HeavyLoad,2023-12-19,pedro.navarro@ecomotive.com
+D-165,David Romero,LIC-578913,27.34,HeavyLoad,2023-04-16,david.romero@ecomotive.com
+D-166,  LAURA ROMERO  ,LIC-756574,43.32,HeavyLoad-Hazmat-ElectricVehicle,2023-08-27,laura.romero@ecomotive.com
+D-167,luis sanchez,LIC-874508,20.5,HeavyLoad,2023-12-21,luis.sanchez@ecomotive.com
+D-168,Sofia Sanchez,LIC-863797,45.39,Hazmat-International-NightShift,2023-12-02,sofia.sanchez@ecomotive.com
+D-169,Roberto Garcia,,31.21,Hazmat-International,2023-06-24,roberto.garcia@ecomotive.com
+D-170,  Pedro Navarro  ,LIC-973871,22.16 EUR,Hazmat-NightShift,2023-08-08,pedro.navarro@ecomotive.com
+D-171,ROBERTO RUIZ,LIC-652786,36.85,NightShift-ElectricVehicle-International,2023-11-28,roberto.ruiz@ecomotive.com
+D-172,Juan Ruiz,LIC-995601,30.7,International-ElectricVehicle,2023-06-10,juan.ruiz@ecomotive.com
+D-173,Jorge Ruiz,LIC-642316,47.09,NightShift-International-ElectricVehicle,2023-12-19,jorge.ruiz@ecomotive.com
+D-174,  Sofia Garcia  ,,42.64,NightShift-International,2023-01-23,sofia.garcia@ecomotive.com
+D-175,Elena Hernandez,LIC-519479,43.7,HeavyLoad-NightShift-ElectricVehicle,2023-01-16,elena.hernandez@ecomotive.com
+D-176,David Romero,LIC-615670,24.46,International,2023-09-15,david.romero@ecomotive.com
+D-177,Roberto Perez,LIC-580939,49.37 EUR,Hazmat-HeavyLoad,2023-05-01,roberto.perez@ecomotive.com
+D-178,LUCIA SANCHEZ,LIC-769496,23.81,HeavyLoad-Hazmat,2023-09-11,lucia.sanchez@ecomotive.com
+D-179,Carmen Navarro,LIC-533445,49.14 EUR,ElectricVehicle-International,2023-05-03,carmen.navarro@ecomotive.com
+D-180,Pedro Hernandez,LIC-168340,45.98 EUR,International-Hazmat,2023-12-16,pedro.hernandez@ecomotive.com
+D-181,luis ruiz,LIC-185207,22.32,International-HeavyLoad,2023-05-18,luis.ruiz@ecomotive.com
+D-182,Roberto Lopez,LIC-451817,33.57 EUR,NightShift-HeavyLoad,2023-03-01,roberto.lopez@ecomotive.com
+D-183,Elena Perez,LIC-163794,36.2,HeavyLoad-ElectricVehicle-NightShift,2023-10-26,elena.perez@ecomotive.com
+D-184,ANA GARCIA,,30.19,HeavyLoad-Hazmat,2023-09-04,ana.garcia@ecomotive.com
+D-185,Luis Moreno,LIC-651671,47.36,ElectricVehicle-HeavyLoad,2023-09-16,luis.moreno@ecomotive.com
+D-186,Jorge Gomez,LIC-923436,28.14 EUR,International-ElectricVehicle-Hazmat,2023-01-20,jorge.gomez@ecomotive.com
+D-187,Roberto Ruiz,LIC-153432,29.04 EUR,International-HeavyLoad-Hazmat,2023-05-26,roberto.ruiz@ecomotive.com
+D-188,  Ana Romero  ,LIC-404486,22.64,NightShift-International-HeavyLoad,2023-12-08,ana.romero@ecomotive.com
+D-189,Sofia Gomez,LIC-934293,35.57,HeavyLoad,2023-11-17,sofia.gomez@ecomotive.com
+D-190,LUCIA GARCIA,LIC-770514,26.25 EUR,HeavyLoad,2023-02-10,lucia.garcia@ecomotive.com
+D-191,Roberto Moreno,LIC-196457,42.38,NightShift-Hazmat,2023-09-05,roberto.moreno@ecomotive.com
+D-192,Ana Romero,LIC-516731,48.24,HeavyLoad,2023-05-05,ana.romero@ecomotive.com
+D-193,PEDRO PEREZ,LIC-221170,20.16 EUR,HeavyLoad-International-Hazmat,2023-10-12,pedro.perez@ecomotive.com
+D-194,Ana Perez,LIC-819728,43.52 EUR,NightShift-ElectricVehicle-Hazmat,2023-12-20,ana.perez@ecomotive.com
+D-195,jorge navarro,,29.36 EUR,ElectricVehicle-International,2023-09-27,jorge.navarro@ecomotive.com
+D-196,PEDRO MORENO,LIC-704383,28.06,Hazmat-NightShift-ElectricVehicle,2023-04-26,pedro.moreno@ecomotive.com
+D-197,Jorge Moreno,LIC-706219,23.52,NightShift-Hazmat-HeavyLoad,2023-02-25,jorge.moreno@ecomotive.com
+D-198,laura smith,LIC-340926,22.28,Hazmat-HeavyLoad,2023-07-18,laura.smith@ecomotive.com
+D-199,laura navarro,LIC-243582,43.15,International-Hazmat-NightShift,2023-12-13,laura.navarro@ecomotive.com
+D-200,Ana Lopez,LIC-171576,24.5,Hazmat-NightShift-International,2023-11-27,ana.lopez@ecomotive.com
+D-201,Roberto Navarro,LIC-660267,37.55,NightShift-International-Hazmat,2023-09-19,roberto.navarro@ecomotive.com
+D-202,JUAN SMITH,LIC-614099,32.28 EUR,Hazmat-International-NightShift,2023-10-13,juan.smith@ecomotive.com
+D-203,Juan Smith,LIC-597665,45.14,NightShift,2023-07-03,juan.smith@ecomotive.com
+D-204,  ANA PEREZ  ,LIC-103643,33.93,Hazmat,2023-12-12,ana.perez@ecomotive.com
+D-205,Pedro Moreno,LIC-602700,30.85 EUR,International-HeavyLoad,2023-08-12,pedro.moreno@ecomotive.com
+D-206,MARIA NAVARRO,LIC-716864,34.11,International-ElectricVehicle,2023-05-23,maria.navarro@ecomotive.com
+D-207,Sofia Alvarez,LIC-783895,21.29,HeavyLoad-Hazmat-NightShift,2023-12-11,sofia.alvarez@ecomotive.com
+D-208,elena romero,LIC-116831,24.52,International-Hazmat,2023-09-20,elena.romero@ecomotive.com
+D-209,  david diaz  ,LIC-479823,46.61 EUR,NightShift-HeavyLoad-ElectricVehicle,2023-01-13,david.diaz@ecomotive.com
+D-210,LUIS GARCIA,LIC-391133,44.04 EUR,HeavyLoad-Hazmat-NightShift,2023-03-09,luis.garcia@ecomotive.com
+D-211,Sofia Moreno,LIC-443056,32.92,ElectricVehicle-Hazmat-NightShift,2023-11-06,sofia.moreno@ecomotive.com
+D-212,pedro lopez,LIC-471861,26.44,HeavyLoad-ElectricVehicle-Hazmat,2023-11-07,pedro.lopez@ecomotive.com
+D-213,MARIA SMITH,LIC-424406,35.63,ElectricVehicle-Hazmat-HeavyLoad,2023-09-14,maria.smith@ecomotive.com
+D-214,MIGUEL RUIZ,LIC-103948,39.65 EUR,NightShift-Hazmat,2023-03-28,miguel.ruiz@ecomotive.com
+D-215,Maria Martin,LIC-630601,35.15,Hazmat-NightShift-International,2023-04-09,maria.martin@ecomotive.com
+D-216,  carmen gomez  ,LIC-562340,46.95 EUR,Hazmat,2023-02-06,carmen.gomez@ecomotive.com
+D-217,Maria Martin,LIC-505586,44.94 EUR,HeavyLoad-International,2023-01-27,maria.martin@ecomotive.com
+D-218,Carmen Alvarez,LIC-194800,22.72,ElectricVehicle,2023-07-27,carmen.alvarez@ecomotive.com
+D-219,Pedro Alvarez,LIC-751511,22.28 EUR,International-HeavyLoad,2023-01-07,pedro.alvarez@ecomotive.com
+D-220,Juan Lopez,LIC-767541,21.39,International,2023-11-21,juan.lopez@ecomotive.com
+D-221,Juan Smith,LIC-534230,42.22,Hazmat-ElectricVehicle,2023-10-04,juan.smith@ecomotive.com
+D-222,  Roberto Martin  ,,40.97,HeavyLoad,2023-12-06,roberto.martin@ecomotive.com
+D-223,  Luis Sanchez  ,LIC-155768,31.36,NightShift-Hazmat-ElectricVehicle,2023-05-14,luis.sanchez@ecomotive.com
+D-224,sofia ruiz,LIC-181101,42.16 EUR,International-ElectricVehicle,2023-10-14,sofia.ruiz@ecomotive.com
+D-225,Pedro Lopez,LIC-610179,40.98 EUR,International,2023-07-01,pedro.lopez@ecomotive.com
+D-226,juan hernandez,LIC-744561,27.25,Hazmat-International-NightShift,2023-10-27,juan.hernandez@ecomotive.com
+D-227,Elena Romero,LIC-663042,26.55,International,2023-02-21,elena.romero@ecomotive.com
+D-228,Lucia Sanchez,LIC-637560,37.66 EUR,Hazmat-International-ElectricVehicle,2023-04-06,lucia.sanchez@ecomotive.com
+D-229,JORGE LOPEZ,LIC-514253,31.64,HeavyLoad,2023-04-19,jorge.lopez@ecomotive.com
+D-230,pedro romero,LIC-365793,39.29,HeavyLoad-NightShift-Hazmat,2023-12-21,pedro.romero@ecomotive.com
+D-231,  Miguel Lopez  ,LIC-382112,23.77 EUR,Hazmat-ElectricVehicle,2023-07-20,miguel.lopez@ecomotive.com
+D-232,Sofia Romero,LIC-931517,20.17 EUR,ElectricVehicle-Hazmat,2023-11-25,sofia.romero@ecomotive.com
+D-233,carlos martin,LIC-633398,28.95 EUR,NightShift-International,2023-05-03,carlos.martin@ecomotive.com
+D-234,Pedro Lopez,LIC-929041,31.35 EUR,HeavyLoad,2023-04-11,pedro.lopez@ecomotive.com
+D-235,Lucia Alvarez,,30.86 EUR,HeavyLoad-NightShift,2023-02-01,lucia.alvarez@ecomotive.com
+D-236,Laura Moreno,LIC-187683,26.67 EUR,NightShift-Hazmat-ElectricVehicle,2023-09-20,laura.moreno@ecomotive.com
+D-237,Carmen Romero,LIC-231221,46.89,NightShift,2023-05-17,carmen.romero@ecomotive.com
+D-238,Laura Diaz,LIC-471683,32.89 EUR,International-Hazmat,2023-01-16,laura.diaz@ecomotive.com
+D-239,  Juan Garcia  ,LIC-740484,20.46,HeavyLoad-ElectricVehicle,2023-09-14,juan.garcia@ecomotive.com
+D-240,Elena Hernandez,LIC-701887,39.32,ElectricVehicle,2023-05-27,elena.hernandez@ecomotive.com
+D-241,JUAN PEREZ,LIC-515695,48.7,ElectricVehicle,2023-02-23,juan.perez@ecomotive.com
+D-242,  Lucia Smith  ,LIC-130517,36.94 EUR,NightShift-HeavyLoad-ElectricVehicle,2023-01-14,lucia.smith@ecomotive.com
+D-243,Ana Moreno,LIC-178981,41.7,ElectricVehicle,2023-05-20,ana.moreno@ecomotive.com
+D-244,  Jorge Perez  ,LIC-583418,27.12,International,2023-02-04,jorge.perez@ecomotive.com
+D-245,David Navarro,LIC-403334,22.3,HeavyLoad,2023-07-12,david.navarro@ecomotive.com
+D-246,David Martin,LIC-101957,36.48,International-Hazmat-HeavyLoad,2023-02-19,david.martin@ecomotive.com
+D-247,Elena Alvarez,LIC-239887,42.5 EUR,International-NightShift,2023-03-08,elena.alvarez@ecomotive.com
+D-248,Isabel Romero,LIC-605442,23.41 EUR,ElectricVehicle-Hazmat,2023-07-23,isabel.romero@ecomotive.com
+D-249,lucia perez,LIC-462260,32.89,Hazmat,2023-07-19,lucia.perez@ecomotive.com
+D-250,  ANA HERNANDEZ  ,LIC-531616,46.93 EUR,NightShift,2023-09-24,ana.hernandez@ecomotive.com
+D-251,  Isabel Sanchez  ,LIC-158775,42.41,International-NightShift-Hazmat,2023-04-15,isabel.sanchez@ecomotive.com
+D-252,  roberto gomez  ,LIC-334452,38.04,HeavyLoad,2023-09-07,roberto.gomez@ecomotive.com
+D-253,Sofia Alvarez,LIC-245960,35.32 EUR,Hazmat-HeavyLoad-ElectricVehicle,2023-12-27,sofia.alvarez@ecomotive.com
+D-254,  CARMEN NAVARRO  ,LIC-866038,37.9,International-NightShift,2023-08-05,carmen.navarro@ecomotive.com
+D-255,MARIA MARTIN,LIC-371319,45.25,NightShift-Hazmat,2023-11-19,maria.martin@ecomotive.com
+D-256,Roberto Perez,LIC-812924,34.62 EUR,NightShift,2023-09-26,roberto.perez@ecomotive.com
+D-257,ISABEL GARCIA,LIC-478098,22.93,NightShift,2023-11-06,isabel.garcia@ecomotive.com
+D-258,  LUIS SMITH  ,LIC-957429,45.48 EUR,HeavyLoad-International,2023-06-18,luis.smith@ecomotive.com
+D-259,Roberto Smith,LIC-449238,37.28,Hazmat-International,2023-10-26,roberto.smith@ecomotive.com
+D-260,  Ana Alvarez  ,LIC-951594,27.8 EUR,NightShift-International-ElectricVehicle,2023-03-17,ana.alvarez@ecomotive.com
+D-261,juan romero,LIC-870368,35.6,ElectricVehicle-NightShift,2023-10-12,juan.romero@ecomotive.com
+D-262,  Lucia Romero  ,LIC-922364,23.76,HeavyLoad-Hazmat-ElectricVehicle,2023-01-24,lucia.romero@ecomotive.com
+D-263,MIGUEL SANCHEZ,LIC-334842,36.75,International-NightShift-HeavyLoad,2023-05-28,miguel.sanchez@ecomotive.com
+D-264,Carmen Ruiz,LIC-875949,34.81,Hazmat,2023-02-05,carmen.ruiz@ecomotive.com
+D-265,luis sanchez,LIC-397268,32.41,ElectricVehicle-HeavyLoad,2023-05-27,luis.sanchez@ecomotive.com
+D-266,JORGE NAVARRO,LIC-649675,32.53 EUR,Hazmat-International,2023-09-11,jorge.navarro@ecomotive.com
+D-267,Miguel Martin,LIC-417897,42.27 EUR,NightShift,2023-03-01,miguel.martin@ecomotive.com
+D-268,Jorge Alvarez,LIC-157020,43.09,ElectricVehicle,2023-02-14,jorge.alvarez@ecomotive.com
+D-269,  Sofia Diaz  ,LIC-627714,31.95,International-HeavyLoad-Hazmat,2023-01-10,sofia.diaz@ecomotive.com
+D-270,Jorge Ruiz,LIC-177979,31.18,Hazmat-ElectricVehicle-International,2023-08-19,jorge.ruiz@ecomotive.com
+D-271,luis navarro,LIC-183295,24.67 EUR,Hazmat-International-NightShift,2023-11-23,luis.navarro@ecomotive.com
+D-272,Maria Smith,LIC-588801,44.61,NightShift-HeavyLoad,2023-02-02,maria.smith@ecomotive.com
+D-273,  laura hernandez  ,LIC-534548,20.16,HeavyLoad,2023-01-26,laura.hernandez@ecomotive.com
+D-274,  LAURA NAVARRO  ,LIC-166263,27.24,ElectricVehicle-HeavyLoad,2023-05-08,laura.navarro@ecomotive.com
+D-275,Pedro Ruiz,LIC-162784,42.45,ElectricVehicle,2023-08-17,pedro.ruiz@ecomotive.com
+D-276,Maria Martin,LIC-241895,24.17,ElectricVehicle,2023-09-08,maria.martin@ecomotive.com
+D-277,Elena Romero,LIC-408805,29.45 EUR,NightShift-HeavyLoad,2023-05-13,elena.romero@ecomotive.com
+D-278,  Maria Perez  ,LIC-940983,34.18 EUR,NightShift-Hazmat,2023-07-04,maria.perez@ecomotive.com
+D-279,Roberto Romero,LIC-326377,30.32,Hazmat-ElectricVehicle-HeavyLoad,2023-09-19,roberto.romero@ecomotive.com
+D-280,  Miguel Gomez  ,LIC-264206,35.44,NightShift-ElectricVehicle-International,2023-01-09,miguel.gomez@ecomotive.com
+D-281,LUIS SANCHEZ,LIC-385682,45.01,HeavyLoad,2023-08-01,luis.sanchez@ecomotive.com
+D-282,Juan Alvarez,LIC-707477,30.85,International-NightShift-ElectricVehicle,2023-03-26,juan.alvarez@ecomotive.com
+D-283,Jorge Gomez,LIC-338965,27.76,HeavyLoad-Hazmat-International,2023-12-16,jorge.gomez@ecomotive.com
+D-284,  Juan Moreno  ,LIC-113798,39.08,Hazmat-HeavyLoad,2023-12-28,juan.moreno@ecomotive.com
+D-285,JUAN LOPEZ,LIC-334933,48.24,International-ElectricVehicle,2023-03-25,juan.lopez@ecomotive.com
+D-286,maria romero,LIC-232746,28.2,International,2023-07-16,maria.romero@ecomotive.com
+D-287,ISABEL SMITH,LIC-946970,38.83 EUR,Hazmat,2023-01-03,isabel.smith@ecomotive.com
+D-288,Roberto Gomez,LIC-322354,32.22,ElectricVehicle,2023-10-14,roberto.gomez@ecomotive.com
+D-289,Juan Navarro,LIC-132116,39.86,NightShift-Hazmat-International,2023-11-07,juan.navarro@ecomotive.com
+D-290,  Isabel Garcia  ,LIC-633179,24.8,Hazmat,2023-06-01,isabel.garcia@ecomotive.com
+D-291,Roberto Smith,LIC-788915,47.58,International,2023-05-25,roberto.smith@ecomotive.com
+D-292,  Ana Sanchez  ,LIC-836142,42.94 EUR,ElectricVehicle-HeavyLoad-NightShift,2023-05-02,ana.sanchez@ecomotive.com
+D-293,Roberto Hernandez,LIC-176429,29.96 EUR,Hazmat,2023-11-27,roberto.hernandez@ecomotive.com
+D-294,roberto moreno,LIC-684279,34.16,HeavyLoad-NightShift,2023-05-08,roberto.moreno@ecomotive.com
+D-295,  david diaz  ,LIC-933157,35.38,International-Hazmat,2023-04-27,david.diaz@ecomotive.com
+D-296,elena ruiz,LIC-966013,48.16,NightShift-Hazmat-International,2023-06-06,elena.ruiz@ecomotive.com
+D-297,  David Perez  ,LIC-821952,42.92,International-ElectricVehicle,2023-07-10,david.perez@ecomotive.com
+D-298,  Miguel Alvarez  ,LIC-188498,46.29,ElectricVehicle-Hazmat,2023-03-07,miguel.alvarez@ecomotive.com
+D-299,David Gomez,LIC-123132,43.05 EUR,NightShift-Hazmat-HeavyLoad,2023-04-12,david.gomez@ecomotive.com
+D-300,  isabel navarro  ,LIC-114300,26.1 EUR,HeavyLoad-International,2023-07-18,isabel.navarro@ecomotive.com
