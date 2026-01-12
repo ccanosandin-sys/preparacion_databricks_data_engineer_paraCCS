@@ -1,0 +1,68 @@
+
+bundle:
+  name: ecomotive_project
+
+resources:
+  pipelines:
+    ecomotive_pipeline_dlt:
+      name: "[${bundle.target}] Ecomotive Pipeline"
+      libraries:
+        - notebook:
+            path: ./src/Module_3_01_DLT_Pipeline_Ecomotive.ipynb
+      catalog: "ecomotive"
+      target: "ecomotive_${bundle.target}"
+      serverless: true
+      configuration:
+        bundle.sourcePath: /Volumes/ecomotive/landing/ecomotive_vol
+      continuous: false
+
+      
+  jobs:
+    ecomotive_trigger_job:
+      name: "[${bundle.target}] Trigger Ecomotive"
+
+      # --- A. TRIGGERS (EL GATILLO) ---
+      # Opción 1: Schedule (Cron). Ej: Todos los días a las 8:00 AM
+      schedule:
+        quartz_cron_expression: "0 0 8 * * ?"
+        timezone_id: "Europe/Madrid"
+        pause_status: PAUSED # Lo dejamos pausado para que no se ejecute solo todavía
+
+      # Opción 2: File Arrival
+      # trigger:
+      #   file_arrival:
+      #     url: /Volumes/ecomotive/landing/inbox_drivers
+
+      tasks:
+        # --- TAREA 1: EL PIPELINE DLT ---
+        - task_key: refresh_pipeline
+          pipeline_task:
+            pipeline_id: ${resources.pipelines.ecomotive_pipeline_dlt.id}
+            full_refresh: false
+
+        # --- TAREA 2: NOTIFICACIÓN ---
+        - task_key: send_notification
+          # --- B. DEPENDENCIAS ---
+          depends_on:
+            - task_key: refresh_pipeline # <--- ESTO CREA LA FLECHA DEL GRAFO
+          
+          notebook_task:
+            notebook_path: ./src/task_notification.ipynb
+            base_parameters:
+              status: "SUCCESS"
+
+# ==============================================================================
+# CONFIGURACIÓN DE TARGETS
+# ==============================================================================
+targets:
+  dev:
+    mode: development
+    default: true
+    workspace:
+      host: https://dbc-5716a166-5f03.cloud.databricks.com
+
+  prod:
+    mode: production
+    workspace:
+      host: https://dbc-5716a166-5f03.cloud.databricks.com
+      root_path: /Workspace/Users/pablo.cumbreraconde@gmail.com/.bundle/${bundle.name}/${bundle.target}
