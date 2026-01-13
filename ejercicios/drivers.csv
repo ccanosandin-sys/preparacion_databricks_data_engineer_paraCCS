@@ -1,0 +1,11 @@
+driver_id,name,truck_id,hire_date,base_location
+D-001,Carlos Ruiz,T-101,2022-01-15,Madrid
+D-002,Ana Gomez,T-102,2023-03-10,Barcelona
+D-003,Miguel Torres,T-103,2021-11-05,Valencia
+D-004,Lucia Fernandez,T-104,2024-01-20,Sevilla
+D-005,Roberto Diaz,T-105,2022-07-12,Bilbao
+D-006,Elena Vega,T-106,2023-09-01,Madrid
+D-007,Javier Sanz,T-107,2020-05-18,Barcelona
+D-008,Sofia Mendez,T-108,2021-02-28,Valencia
+D-009,Pablo Albor,T-109,2023-12-11,Sevilla
+D-010,Maria Lopez,T-110,2022-10-30,Bilbao
