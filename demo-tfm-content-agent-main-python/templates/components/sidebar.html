@@ -1,0 +1,20 @@
+&lt;div class="fixed left-0 top-0 h-full w-64 bg-white shadow-lg z-10"&gt;
+    &lt;div class="p-6"&gt;
+        &lt;h2 class="text-xl font-bold text-gray-900"&gt;Content Agent&lt;/h2&gt;
+    &lt;/div&gt;
+        &lt;nav class="mt-6"&gt;
+        &lt;a href="/dashboard" class="block px-6 py-3 text-gray-700 hover:bg-gray-100"&gt;Dashboard&lt;/a&gt;
+        &lt;a href="/app/create" class="block px-6 py-3 text-gray-700 hover:bg-gray-100"&gt;Crear Contenido&lt;/a&gt;
+        &lt;a href="/app/content" class="block px-6 py-3 text-gray-700 hover:bg-gray-100"&gt;Librería&lt;/a&gt;
+        &lt;a href="/app/trends" class="block px-6 py-3 text-gray-700 hover:bg-gray-100"&gt;Tendencias&lt;/a&gt;
+        &lt;a href="/app/analytics" class="block px-6 py-3 text-gray-700 hover:bg-gray-100"&gt;Analytics&lt;/a&gt;
+        &lt;a href="/app/insights" class="block px-6 py-3 text-gray-700 hover:bg-gray-100"&gt;Insights&lt;/a&gt;
+        &lt;a href="/app/brand" class="block px-6 py-3 text-gray-700 hover:bg-gray-100"&gt;Marca&lt;/a&gt;
+        &lt;a href="/app/team" class="block px-6 py-3 text-gray-700 hover:bg-gray-100"&gt;Equipo&lt;/a&gt;
+        {% if is_admin %}
+        &lt;a href="/admin" class="block px-6 py-3 text-gray-700 hover:bg-gray-100"&gt;Admin&lt;/a&gt;
+        {% endif %}
+        &lt;a href="/settings" class="block px-6 py-3 text-gray-700 hover:bg-gray-100"&gt;Configuración&lt;/a&gt;
+        &lt;a href="/auth/logout" class="block px-6 py-3 text-red-600 hover:bg-red-50"&gt;Cerrar Sesión&lt;/a&gt;
+    &lt;/nav&gt;
+&lt;/div&gt;

@@ -1,0 +1,121 @@
+{% extends "base.html" %}
+{% set active_page = 'dashboard' %}
+{% block title %}Dashboard – ContentAgent{% endblock %}
+{% block content %}
+<div class="max-w-6xl mx-auto">
+  <!-- Header -->
+  <div class="mb-8">
+    <h1 class="text-3xl font-bold text-white">Dashboard</h1>
+    <p class="text-gray-400 mt-1">Bienvenido, {{ user.email }}</p>
+  </div>
+
+  <!-- KPI Cards -->
+  <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+    <div class="bg-gray-900 border border-gray-800 rounded-xl p-5">
+      <p class="text-gray-400 text-sm mb-1">Contenidos creados</p>
+      <p class="text-3xl font-bold text-white" id="kpi-contents">–</p>
+    </div>
+    <div class="bg-gray-900 border border-gray-800 rounded-xl p-5">
+      <p class="text-gray-400 text-sm mb-1">Noticias guardadas</p>
+      <p class="text-3xl font-bold text-white" id="kpi-news">–</p>
+    </div>
+    <div class="bg-gray-900 border border-gray-800 rounded-xl p-5">
+      <p class="text-gray-400 text-sm mb-1">Tendencias analizadas</p>
+      <p class="text-3xl font-bold text-white" id="kpi-trends">–</p>
+    </div>
+    <div class="bg-gray-900 border border-gray-800 rounded-xl p-5">
+      <p class="text-gray-400 text-sm mb-1">Topics top</p>
+      <p class="text-3xl font-bold text-white" id="kpi-topics">–</p>
+    </div>
+  </div>
+
+  <!-- Quick actions -->
+  <div class="grid md:grid-cols-3 gap-4 mb-8">
+    <a href="/app/trends" class="group bg-gray-900 border border-gray-800 hover:border-purple-700/50 rounded-xl p-6 transition-colors">
+      <div class="w-10 h-10 bg-purple-900/50 rounded-lg flex items-center justify-center mb-3 group-hover:bg-purple-900/80 transition-colors">
+        <svg class="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+      </div>
+      <h3 class="font-semibold text-white mb-1">Buscar tendencias</h3>
+      <p class="text-gray-400 text-sm">Descubre qué está pasando en tu nicho hoy</p>
+    </a>
+    <a href="/app/create" class="group bg-gray-900 border border-gray-800 hover:border-purple-700/50 rounded-xl p-6 transition-colors">
+      <div class="w-10 h-10 bg-pink-900/50 rounded-lg flex items-center justify-center mb-3 group-hover:bg-pink-900/80 transition-colors">
+        <svg class="w-5 h-5 text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+      </div>
+      <h3 class="font-semibold text-white mb-1">Crear contenido</h3>
+      <p class="text-gray-400 text-sm">Short, carrusel, post o thread en segundos</p>
+    </a>
+    <a href="/app/insights" class="group bg-gray-900 border border-gray-800 hover:border-purple-700/50 rounded-xl p-6 transition-colors">
+      <div class="w-10 h-10 bg-blue-900/50 rounded-lg flex items-center justify-center mb-3 group-hover:bg-blue-900/80 transition-colors">
+        <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+      </div>
+      <h3 class="font-semibold text-white mb-1">Insights IA</h3>
+      <p class="text-gray-400 text-sm">Analiza tus patrones y oportunidades</p>
+    </a>
+  </div>
+
+  <!-- Recent contents -->
+  <div class="bg-gray-900 border border-gray-800 rounded-xl">
+    <div class="flex items-center justify-between px-6 py-4 border-b border-gray-800">
+      <h2 class="font-semibold text-white">Últimos contenidos</h2>
+      <a href="/app/content" class="text-purple-400 hover:text-purple-300 text-sm">Ver todos →</a>
+    </div>
+    <div id="recent-contents" class="divide-y divide-gray-800">
+      <div class="px-6 py-4 text-gray-500 text-sm">Cargando...</div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+{% block scripts %}
+<script>
+async function loadDashboard() {
+  try {
+    const [analyticsRes, libraryRes] = await Promise.all([
+      fetch('/api/analytics'),
+      fetch('/api/contents?limit=5'),
+    ]);
+    const analytics = await analyticsRes.json();
+    const library = await libraryRes.json();
+
+    document.getElementById('kpi-contents').textContent = analytics.totalContents ?? 0;
+    document.getElementById('kpi-news').textContent = analytics.saved ?? 0;
+    document.getElementById('kpi-trends').textContent = analytics.totalNews ?? 0;
+    document.getElementById('kpi-topics').textContent = analytics.topTopics?.length ?? 0;
+
+    const container = document.getElementById('recent-contents');
+    const items = library.items?.slice(0, 5) || [];
+    if (items.length === 0) {
+      container.innerHTML = '<div class="px-6 py-8 text-center text-gray-500">Aún no has creado contenido. <a href="/app/create" class="text-purple-400 hover:underline">Crea el primero →</a></div>';
+    } else {
+      container.innerHTML = items.map(item => `
+        <div class="px-6 py-4 flex items-center justify-between hover:bg-gray-800/50 transition-colors">
+          <div class="flex items-center gap-3 min-w-0">
+            <span class="badge badge-${item.format}">${formatLabel(item.format)}</span>
+            <span class="text-white text-sm truncate">${escHtml(item.title || 'Sin título')}</span>
+          </div>
+          <div class="flex items-center gap-3 ml-4 flex-shrink-0">
+            <span class="text-xs text-gray-500">${formatDate(item.created_at)}</span>
+            <span class="px-2 py-0.5 rounded-full text-xs ${statusClass(item.status)}">${item.status}</span>
+          </div>
+        </div>
+      `).join('');
+    }
+  } catch (e) {
+    console.error(e);
+  }
+}
+
+function formatLabel(f) {
+  return {short:'Short',carousel:'Carrusel',post:'Post',thread:'Thread'}[f] || f;
+}
+function statusClass(s) {
+  return {draft:'bg-yellow-900/50 text-yellow-300', published:'bg-green-900/50 text-green-300', discarded:'bg-gray-800 text-gray-400'}[s] || 'bg-gray-800 text-gray-400';
+}
+function formatDate(d) {
+  if (!d) return '';
+  return new Date(d).toLocaleDateString('es-ES', {day:'2-digit',month:'short'});
+}
+
+loadDashboard();
+</script>
+{% endblock %}

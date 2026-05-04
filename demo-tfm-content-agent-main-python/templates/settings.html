@@ -1,0 +1,103 @@
+&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Configuración - Content Agent&lt;/title&gt;
+    &lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;
+    &lt;link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}"&gt;
+&lt;/head&gt;
+&lt;body class="bg-gray-50"&gt;
+    {% include 'components/sidebar.html' %}
+    
+    &lt;div class="ml-64 p-8"&gt;
+        &lt;div class="max-w-4xl mx-auto"&gt;
+            &lt;h1 class="text-3xl font-bold text-gray-900 mb-8"&gt;Configuración&lt;/h1&gt;
+            
+            &lt;div class="bg-white p-6 rounded-lg shadow mb-6"&gt;
+                &lt;h2 class="text-xl font-semibold mb-4"&gt;Perfil de Usuario&lt;/h2&gt;
+                &lt;form id="profile-form" class="space-y-4"&gt;
+                    &lt;div&gt;
+                        &lt;label class="block text-sm font-medium text-gray-700"&gt;Nombre&lt;/label&gt;
+                        &lt;input type="text" id="user-name" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm"&gt;
+                    &lt;/div&gt;
+                    &lt;div&gt;
+                        &lt;label class="block text-sm font-medium text-gray-700"&gt;Email&lt;/label&gt;
+                        &lt;input type="email" id="user-email" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" readonly&gt;
+                    &lt;/div&gt;
+                    &lt;button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700"&gt;Actualizar Perfil&lt;/button&gt;
+                &lt;/form&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="bg-white p-6 rounded-lg shadow mb-6"&gt;
+                &lt;h2 class="text-xl font-semibold mb-4"&gt;Preferencias&lt;/h2&gt;
+                &lt;form id="preferences-form" class="space-y-4"&gt;
+                    &lt;div&gt;
+                        &lt;label class="block text-sm font-medium text-gray-700"&gt;Idioma&lt;/label&gt;
+                        &lt;select id="language" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm"&gt;
+                            &lt;option value="es"&gt;Español&lt;/option&gt;
+                            &lt;option value="en"&gt;English&lt;/option&gt;
+                        &lt;/select&gt;
+                    &lt;/div&gt;
+                    &lt;div&gt;
+                        &lt;label class="block text-sm font-medium text-gray-700"&gt;Notificaciones&lt;/label&gt;
+                        &lt;input type="checkbox" id="notifications" class="mt-1"&gt;
+                    &lt;/div&gt;
+                    &lt;button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700"&gt;Guardar Preferencias&lt;/button&gt;
+                &lt;/form&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="bg-white p-6 rounded-lg shadow"&gt;
+                &lt;h2 class="text-xl font-semibold mb-4 text-red-600"&gt;Zona de Peligro&lt;/h2&gt;
+                &lt;button id="delete-account" class="bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-700"&gt;Eliminar Cuenta&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;script src="{{ url_for('static', filename='js/main.js') }}"&gt;&lt;/script&gt;
+    &lt;script&gt;
+        // Cargar configuración del usuario
+        fetch('/api/user/profile')
+            .then(response =&gt; response.json())
+            .then(data =&gt; {
+                document.getElementById('user-name').value = data.name || '';
+                document.getElementById('user-email').value = data.email || '';
+                document.getElementById('language').value = data.language || 'es';
+                document.getElementById('notifications').checked = data.notifications || false;
+            });
+        
+        // Actualizar perfil
+        document.getElementById('profile-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const data = { name: document.getElementById('user-name').value };
+            fetch('/api/user/profile', {
+                method: 'PUT',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(data)
+            }).then(() =&gt; showNotification('Perfil actualizado', 'success'));
+        });
+        
+        // Guardar preferencias
+        document.getElementById('preferences-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const data = {
+                language: document.getElementById('language').value,
+                notifications: document.getElementById('notifications').checked
+            };
+            fetch('/api/user/preferences', {
+                method: 'PUT',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(data)
+            }).then(() =&gt; showNotification('Preferencias guardadas', 'success'));
+        });
+        
+        // Eliminar cuenta
+        document.getElementById('delete-account').addEventListener('click', function() {
+            if (confirm('¿Estás seguro de que quieres eliminar tu cuenta? Esta acción no se puede deshacer.')) {
+                fetch('/api/user/delete', { method: 'DELETE' })
+                    .then(() =&gt; window.location.href = '/logout');
+            }
+        });
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;

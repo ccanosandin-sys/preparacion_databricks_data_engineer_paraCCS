@@ -1,0 +1,107 @@
+&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Team - Content Agent&lt;/title&gt;
+    &lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;
+    &lt;link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}"&gt;
+&lt;/head&gt;
+&lt;body class="bg-gray-50"&gt;
+    {% include 'components/sidebar.html' %}
+    
+    &lt;div class="ml-64 p-8"&gt;
+        &lt;div class="max-w-6xl mx-auto"&gt;
+            &lt;h1 class="text-3xl font-bold text-gray-900 mb-8"&gt;Gestión de Equipo&lt;/h1&gt;
+            
+            &lt;div class="bg-white p-6 rounded-lg shadow mb-6"&gt;
+                &lt;h2 class="text-xl font-semibold mb-4"&gt;Miembros del Equipo&lt;/h2&gt;
+                &lt;button id="add-member-btn" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 mb-4"&gt;Agregar Miembro&lt;/button&gt;
+                &lt;div id="team-members" class="space-y-4"&gt;Cargando miembros...&lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="bg-white p-6 rounded-lg shadow"&gt;
+                &lt;h2 class="text-xl font-semibold mb-4"&gt;Invitaciones Pendientes&lt;/h2&gt;
+                &lt;div id="pending-invitations"&gt;Cargando invitaciones...&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;!-- Modal para agregar miembro --&gt;
+    &lt;div id="add-member-modal" class="fixed inset-0 bg-gray-600 bg-opacity-50 hidden flex items-center justify-center"&gt;
+        &lt;div class="bg-white p-6 rounded-lg w-96"&gt;
+            &lt;h3 class="text-lg font-semibold mb-4"&gt;Agregar Miembro&lt;/h3&gt;
+            &lt;form id="add-member-form"&gt;
+                &lt;div class="mb-4"&gt;
+                    &lt;label class="block text-sm font-medium text-gray-700"&gt;Email&lt;/label&gt;
+                    &lt;input type="email" id="member-email" required class="mt-1 block w-full border-gray-300 rounded-md shadow-sm"&gt;
+                &lt;/div&gt;
+                &lt;div class="mb-4"&gt;
+                    &lt;label class="block text-sm font-medium text-gray-700"&gt;Rol&lt;/label&gt;
+                    &lt;select id="member-role" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm"&gt;
+                        &lt;option value="member"&gt;Miembro&lt;/option&gt;
+                        &lt;option value="admin"&gt;Admin&lt;/option&gt;
+                    &lt;/select&gt;
+                &lt;/div&gt;
+                &lt;div class="flex justify-end space-x-2"&gt;
+                    &lt;button type="button" id="cancel-add" class="px-4 py-2 border border-gray-300 rounded-md"&gt;Cancelar&lt;/button&gt;
+                    &lt;button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-md"&gt;Enviar Invitación&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/form&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;script src="{{ url_for('static', filename='js/main.js') }}"&gt;&lt;/script&gt;
+    &lt;script&gt;
+        // Cargar miembros del equipo
+        function loadTeam() {
+            fetch('/api/team/members')
+                .then(response =&gt; response.json())
+                .then(data =&gt; {
+                    const container = document.getElementById('team-members');
+                    container.innerHTML = data.map(member =&gt; `
+                        &lt;div class="flex items-center justify-between p-4 border rounded"&gt;
+                            &lt;div&gt;
+                                &lt;p class="font-medium"&gt;${member.email}&lt;/p&gt;
+                                &lt;p class="text-sm text-gray-600"&gt;${member.role}&lt;/p&gt;
+                            &lt;/div&gt;
+                            &lt;button onclick="removeMember('${member.id}')" class="text-red-600 hover:text-red-800"&gt;Eliminar&lt;/button&gt;
+                        &lt;/div&gt;
+                    `).join('');
+                });
+        }
+        
+        loadTeam();
+        
+        // Modal
+        document.getElementById('add-member-btn').addEventListener('click', () =&gt; {
+            document.getElementById('add-member-modal').classList.remove('hidden');
+        });
+        
+        document.getElementById('cancel-add').addEventListener('click', () =&gt; {
+            document.getElementById('add-member-modal').classList.add('hidden');
+        });
+        
+        // Agregar miembro
+        document.getElementById('add-member-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const data = {
+                email: document.getElementById('member-email').value,
+                role: document.getElementById('member-role').value
+            };
+            fetch('/api/team/invite', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(data)
+            }).then(() =&gt; {
+                document.getElementById('add-member-modal').classList.add('hidden');
+                loadTeam();
+            });
+        });
+        
+        function removeMember(id) {
+            fetch(`/api/team/members/${id}`, {method: 'DELETE'}).then(loadTeam);
+        }
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;

@@ -1,0 +1,74 @@
+&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Admin - Content Agent&lt;/title&gt;
+    &lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;
+    &lt;link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}"&gt;
+&lt;/head&gt;
+&lt;body class="bg-gray-50"&gt;
+    {% include 'components/sidebar.html' %}
+    
+    &lt;div class="ml-64 p-8"&gt;
+        &lt;div class="max-w-7xl mx-auto"&gt;
+            &lt;h1 class="text-3xl font-bold text-gray-900 mb-8"&gt;Panel de Administración&lt;/h1&gt;
+            
+            &lt;div class="mb-6"&gt;
+                &lt;nav class="flex space-x-4"&gt;
+                    &lt;button id="audit-tab" class="tab-btn bg-blue-600 text-white px-4 py-2 rounded-md"&gt;Auditoría&lt;/button&gt;
+                    &lt;button id="finance-tab" class="tab-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-md"&gt;Finanzas&lt;/button&gt;
+                &lt;/nav&gt;
+            &lt;/div&gt;
+            
+            &lt;div id="audit-content" class="tab-content"&gt;
+                &lt;div class="bg-white p-6 rounded-lg shadow"&gt;
+                    &lt;h2 class="text-xl font-semibold mb-4"&gt;Logs de Auditoría&lt;/h2&gt;
+                    &lt;div id="audit-logs"&gt;Cargando logs...&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div id="finance-content" class="tab-content hidden"&gt;
+                &lt;div class="bg-white p-6 rounded-lg shadow"&gt;
+                    &lt;h2 class="text-xl font-semibold mb-4"&gt;Informes Financieros&lt;/h2&gt;
+                    &lt;div id="finance-reports"&gt;Cargando informes...&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;script src="{{ url_for('static', filename='js/main.js') }}"&gt;&lt;/script&gt;
+    &lt;script&gt;
+        // Tabs
+        document.querySelectorAll('.tab-btn').forEach(btn =&gt; {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.tab-btn').forEach(b =&gt; b.classList.remove('bg-blue-600', 'text-white').add('bg-gray-200', 'text-gray-700'));
+                document.querySelectorAll('.tab-content').forEach(c =&gt; c.classList.add('hidden'));
+                
+                this.classList.remove('bg-gray-200', 'text-gray-700').add('bg-blue-600', 'text-white');
+                document.getElementById(this.id.replace('-tab', '-content')).classList.remove('hidden');
+            });
+        });
+        
+        // Cargar datos
+        fetch('/api/admin/audit')
+            .then(response =&gt; response.json())
+            .then(data =&gt; {
+                document.getElementById('audit-logs').innerHTML = data.map(log =&gt; `
+                    &lt;div class="p-4 border-b"&gt;
+                        &lt;p&gt;${log.action} - ${log.timestamp}&lt;/p&gt;
+                    &lt;/div&gt;
+                `).join('');
+            });
+        
+        fetch('/api/admin/finance')
+            .then(response =&gt; response.json())
+            .then(data =&gt; {
+                document.getElementById('finance-reports').innerHTML = `
+                    &lt;p&gt;Ingresos: $${data.revenue}&lt;/p&gt;
+                    &lt;p&gt;Usuarios: ${data.users}&lt;/p&gt;
+                `;
+            });
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;

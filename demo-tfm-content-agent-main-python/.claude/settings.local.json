@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Get-ChildItem -Path \"C:\\\\Users\\\\cristina.cano_blueta\\\\workspace\\\\demo-tfm-content-agent-main-python\" -Recurse -ErrorAction SilentlyContinue | Select-Object -Property @{Name='Path';Expression={$_.FullName.Replace\\('C:\\\\Users\\\\cristina.cano_blueta\\\\workspace\\\\demo-tfm-content-agent-main-python\\\\', ''\\)}}, @{Name='Type';Expression={if\\($_.PSIsContainer\\){'DIR'}else{'FILE'}}}, @{Name='Extension';Expression={$_.Extension}} | Sort-Object -Property Path | Format-Table -AutoSize)",
+      "Bash(Remove-Item -Recurse -Force \"src\" -ErrorAction SilentlyContinue)",
+      "Bash(Remove-Item -Recurse -Force \"tier_view\" -ErrorAction SilentlyContinue)",
+      "Bash(Write-Host \"src/ y tier_view/ eliminados\")",
+      "PowerShell(New-Item -ItemType Directory -Force \"C:\\\\Users\\\\cristina.cano_blueta\\\\workspace\\\\demo-tfm-content-agent-main-python\\\\content_agent\")",
+      "PowerShell(New-Item -ItemType Directory -Force \"C:\\\\Users\\\\cristina.cano_blueta\\\\workspace\\\\demo-tfm-content-agent-main-python\\\\tier_view\")",
+      "PowerShell(New-Item -ItemType Directory -Force \"C:\\\\Users\\\\cristina.cano_blueta\\\\workspace\\\\demo-tfm-content-agent-main-python\\\\tier_view\\\\api\")",
+      "PowerShell(python --version)",
+      "PowerShell(pip --version)"
+    ]
+  }
+}

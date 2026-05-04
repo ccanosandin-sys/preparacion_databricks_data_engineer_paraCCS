@@ -1,0 +1,74 @@
+&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Brand - Content Agent&lt;/title&gt;
+    &lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;
+    &lt;link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}"&gt;
+&lt;/head&gt;
+&lt;body class="bg-gray-50"&gt;
+    {% include 'components/sidebar.html' %}
+    
+    &lt;div class="ml-64 p-8"&gt;
+        &lt;div class="max-w-4xl mx-auto"&gt;
+            &lt;h1 class="text-3xl font-bold text-gray-900 mb-8"&gt;Configuración de Marca&lt;/h1&gt;
+            
+            &lt;div class="bg-white p-6 rounded-lg shadow mb-6"&gt;
+                &lt;h2 class="text-xl font-semibold mb-4"&gt;Información de la Marca&lt;/h2&gt;
+                &lt;form id="brand-form" class="space-y-4"&gt;
+                    &lt;div&gt;
+                        &lt;label class="block text-sm font-medium text-gray-700"&gt;Nombre de la Marca&lt;/label&gt;
+                        &lt;input type="text" id="brand-name" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm"&gt;
+                    &lt;/div&gt;
+                    &lt;div&gt;
+                        &lt;label class="block text-sm font-medium text-gray-700"&gt;Descripción&lt;/label&gt;
+                        &lt;textarea id="brand-description" rows="3" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm"&gt;&lt;/textarea&gt;
+                    &lt;/div&gt;
+                    &lt;div&gt;
+                        &lt;label class="block text-sm font-medium text-gray-700"&gt;Tono de Voz&lt;/label&gt;
+                        &lt;select id="brand-tone" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm"&gt;
+                            &lt;option&gt;Profesional&lt;/option&gt;
+                            &lt;option&gt;Casual&lt;/option&gt;
+                            &lt;option&gt;Creativo&lt;/option&gt;
+                        &lt;/select&gt;
+                    &lt;/div&gt;
+                    &lt;button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700"&gt;Guardar&lt;/button&gt;
+                &lt;/form&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="bg-white p-6 rounded-lg shadow"&gt;
+                &lt;h2 class="text-xl font-semibold mb-4"&gt;Estilos de Contenido&lt;/h2&gt;
+                &lt;div id="content-styles"&gt;Cargando estilos...&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;script src="{{ url_for('static', filename='js/main.js') }}"&gt;&lt;/script&gt;
+    &lt;script&gt;
+        // Cargar configuración de marca
+        fetch('/api/brand')
+            .then(response =&gt; response.json())
+            .then(data =&gt; {
+                document.getElementById('brand-name').value = data.name || '';
+                document.getElementById('brand-description').value = data.description || '';
+                document.getElementById('brand-tone').value = data.tone || '';
+            });
+        
+        // Guardar configuración
+        document.getElementById('brand-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const data = {
+                name: document.getElementById('brand-name').value,
+                description: document.getElementById('brand-description').value,
+                tone: document.getElementById('brand-tone').value
+            };
+            fetch('/api/brand', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(data)
+            }).then(() =&gt; alert('Guardado'));
+        });
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;

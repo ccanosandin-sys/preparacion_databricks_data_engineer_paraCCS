@@ -1,0 +1,49 @@
+&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Insights - Content Agent&lt;/title&gt;
+    &lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;
+    &lt;link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}"&gt;
+&lt;/head&gt;
+&lt;body class="bg-gray-50"&gt;
+    {% include 'components/sidebar.html' %}
+    
+    &lt;div class="ml-64 p-8"&gt;
+        &lt;div class="max-w-7xl mx-auto"&gt;
+            &lt;h1 class="text-3xl font-bold text-gray-900 mb-8"&gt;Insights&lt;/h1&gt;
+            
+            &lt;div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8"&gt;
+                &lt;div class="bg-white p-6 rounded-lg shadow"&gt;
+                    &lt;h3 class="text-lg font-semibold mb-2"&gt;Tendencias de Contenido&lt;/h3&gt;
+                    &lt;p class="text-gray-600"&gt;Análisis de tendencias actuales&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class="bg-white p-6 rounded-lg shadow"&gt;
+                    &lt;h3 class="text-lg font-semibold mb-2"&gt;Engagement&lt;/h3&gt;
+                    &lt;p class="text-gray-600"&gt;Métricas de interacción&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class="bg-white p-6 rounded-lg shadow"&gt;
+                    &lt;h3 class="text-lg font-semibold mb-2"&gt;Predicciones&lt;/h3&gt;
+                    &lt;p class="text-gray-600"&gt;Análisis predictivo&lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="bg-white p-6 rounded-lg shadow"&gt;
+                &lt;h2 class="text-xl font-semibold mb-4"&gt;Análisis Detallado&lt;/h2&gt;
+                &lt;div id="insights-content"&gt;Cargando insights...&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;script src="{{ url_for('static', filename='js/main.js') }}"&gt;&lt;/script&gt;
+    &lt;script&gt;
+        // Cargar insights
+        fetch('/api/insights')
+            .then(response =&gt; response.json())
+            .then(data =&gt; {
+                document.getElementById('insights-content').innerHTML = JSON.stringify(data, null, 2);
+            });
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;

@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% set active_page = 'trends' %}
+{% block title %}Tendencias – ContentAgent{% endblock %}
+{% block content %}
+<div class="max-w-5xl mx-auto">
+  <div class="mb-6">
+    <h1 class="text-3xl font-bold text-white">Tendencias</h1>
+    <p class="text-gray-400 mt-1">Descubre qué está pasando en tu nicho y crea contenido relevante</p>
+  </div>
+
+  <!-- Search -->
+  <div class="bg-gray-900 border border-gray-800 rounded-xl p-6 mb-6">
+    <div class="flex gap-3">
+      <input type="text" id="niche-input" placeholder="Tu nicho (ej: marketing digital, IA, finanzas...)"
+        class="flex-1 form-input" onkeydown="if(event.key==='Enter') fetchTrends()" />
+      <select id="lang-select" class="form-select w-28">
+        <option value="es">🇪🇸 ES</option>
+        <option value="en">🇺🇸 EN</option>
+      </select>
+      <button onclick="fetchTrends()" id="search-btn"
+        class="bg-purple-600 hover:bg-purple-700 text-white px-5 py-2.5 rounded-lg font-medium transition-colors flex items-center gap-2">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+        Buscar
+      </button>
+    </div>
+  </div>
+
+  <!-- Tabs -->
+  <div class="flex gap-4 mb-4 border-b border-gray-800">
+    <button onclick="switchTab('news')" id="tab-news" class="tab-btn active pb-3">Noticias encontradas</button>
+    <button onclick="switchTab('saved')" id="tab-saved" class="tab-btn pb-3">Guardadas</button>
+  </div>
+
+  <!-- News list -->
+  <div id="panel-news">
+    <div id="news-loading" class="hidden text-center py-12 text-gray-500">
+      <div class="w-8 h-8 border-2 border-purple-600 border-t-transparent rounded-full animate-spin mx-auto mb-3"></div>
+      Buscando tendencias...
+    </div>
+    <div id="news-empty" class="text-center py-16 text-gray-500">
+      <svg class="w-12 h-12 mx-auto mb-3 opacity-30" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+      <p>Escribe tu nicho y haz clic en Buscar</p>
+    </div>
+    <div id="news-list" class="space-y-3 hidden"></div>
+  </div>
+
+  <div id="panel-saved" class="hidden">
+    <div id="saved-list" class="space-y-3">
+      <div class="text-center py-12 text-gray-500">Cargando noticias guardadas...</div>
+    </div>
+  </div>
+</div>
+
+<!-- News card template (rendered via JS) -->
+<template id="news-card-template">
+  <div class="bg-gray-900 border border-gray-800 rounded-xl p-5 hover:border-gray-700 transition-colors" data-id="">
+    <div class="flex items-start justify-between gap-4">
+      <div class="flex-1 min-w-0">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="badge-topic"></span>
+          <span class="text-xs text-gray-500 pub-date"></span>
+        </div>
+        <h3 class="font-medium text-white mb-1 news-title"></h3>
+        <p class="text-gray-400 text-sm news-summary"></p>
+        <a href="#" target="_blank" class="text-xs text-purple-400 hover:underline mt-1 inline-block news-source"></a>
+      </div>
+      <div class="flex flex-col gap-2 flex-shrink-0">
+        <button onclick="interactNews(this, 'saved')" class="btn-icon text-yellow-400 hover:bg-yellow-900/30" title="Guardar">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"/></svg>
+        </button>
+        <button onclick="createFromNews(this)" class="btn-icon text-purple-400 hover:bg-purple-900/30" title="Crear contenido">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+        </button>
+        <button onclick="interactNews(this, 'dismissed')" class="btn-icon text-gray-500 hover:bg-gray-800" title="Descartar">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</template>
+{% endblock %}
+{% block scripts %}
+<script src="/static/js/trends.js"></script>
+{% endblock %}
